@@ -4,23 +4,27 @@ package problem7;
 public class BinaryTreeRebuild {
 
     public static void main(String[] args) {
-        int[] a = {1,2,4,7,3,5,6,8};
-        int[] b = {4,7,2,1,5,3,8,6};
-        TreeNode root = rebuildTree(a,b);
+        int[] a = {1, 2, 4, 7, 3, 5, 6, 8};
+        int[] b = {4, 7, 2, 1, 5, 3, 8, 6};
+        TreeNode root = rebuildTree(a, b);
         inOrderTraversal(root);
-
+        int[] c = {1, 2, 3, 4};
+        int[] d = {1, 2, 3, 4};
+        root = rebuildTree(c, d);
+        inOrderTraversal(root);
     }
 
-    public static TreeNode rebuildTree(int[] firstArray, int[] midArray){
+    public static TreeNode rebuildTree(int[] firstArray, int[] midArray) {
         int len = firstArray.length;
-        if(len == 0 || midArray.length != len){
+        if (len == 0 || midArray.length != len) {
             return null;
         }
-        return findNextRoot(firstArray, midArray, 0, len - 1, 0, len -1);
+        return findNextRoot(firstArray, midArray, 0, len - 1, 0, len - 1);
 
     }
-    public static TreeNode findNextRoot(int[] firstArray, int[] midArray, int index1, int index2, int index3, int index4){
-        if(index1 == index2){
+
+    public static TreeNode findNextRoot(int[] firstArray, int[] midArray, int index1, int index2, int index3, int index4) {
+        if (index1 == index2) {
             TreeNode root = new TreeNode();
             root.value = firstArray[index1];
             return root;
@@ -36,30 +40,34 @@ public class BinaryTreeRebuild {
         int rightIndex3 = mid + 1;
         int rightIndex4 = index4;
         root.value = firstArray[index1];
-        if(leftIndex1 <= leftIndex2){
+        //关键判断信息（没有左子树）
+        if (leftIndex1 <= leftIndex2) {
             root.left = findNextRoot(firstArray, midArray, leftIndex1, leftIndex2, leftIndex3, leftIndex4);
         }
-        if(rightIndex1 <= rightIndex2){
+        //关键判断信息（没有右子树）
+        if (rightIndex1 <= rightIndex2) {
             root.right = findNextRoot(firstArray, midArray, rightIndex1, rightIndex2, rightIndex3, rightIndex4);
         }
         return root;
     }
-    public static int findIndex(int[] array, int target){
-        for(int i = 0; i < array.length; i ++){
-            if(array[i] == target) return i;
+
+    public static int findIndex(int[] array, int target) {
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == target) return i;
         }
         return -1;
     }
 
-    public static void inOrderTraversal(TreeNode root){
-        if(root != null){
+    public static void inOrderTraversal(TreeNode root) {
+        if (root != null) {
             System.out.println(root.value);
             inOrderTraversal(root.left);
             inOrderTraversal(root.right);
         }
     }
 }
-class TreeNode{
+
+class TreeNode {
     int value;
     TreeNode left;
     TreeNode right;

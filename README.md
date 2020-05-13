@@ -13,3 +13,4 @@ problem11:旋转数组中最小的数字
 problem12:矩阵中的字符串路径
 problem13:机器人可达范围
 problem14:剪绳子
+problem15:整数的二进制表示中1的个数

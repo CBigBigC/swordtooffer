@@ -1,0 +1,4 @@
+Implementation of Singleton Pattern
+SingletonFirst is the basic way
+SingletonSecond takes multithreading into consideration
+SingletonThird optimize the use of lock

@@ -1,0 +1,3 @@
+实现函数double Power（double base, int exponent）,
+求base的exponent次方。
+不能使用库函数，不用考虑大数问题。

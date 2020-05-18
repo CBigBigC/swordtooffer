@@ -18,3 +18,7 @@ problem16:x的n次方
 problem17:打印1~999（n位）
 problem19:正则匹配
 problem21:奇数前置，偶数后置
+problem22:链表倒数第k个节点
+problem23:有环链表
+problem24:链表反转
+problem25:合并两个有序链表

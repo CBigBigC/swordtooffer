@@ -22,3 +22,6 @@ problem22:链表倒数第k个节点
 problem23:有环链表
 problem24:链表反转
 problem25:合并两个有序链表
+problem26:判断子树
+problem27:镜像二叉树
+problem28:对称二叉树

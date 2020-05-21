@@ -25,3 +25,6 @@ problem25:合并两个有序链表
 problem26:判断子树
 problem27:镜像二叉树
 problem28:对称二叉树
+problem29:顺时针打印矩阵
+problem30:带有最小值的栈
+problem31:入栈和出栈
